@@ -1,15 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import HomePage from "./landing_page/home/HomePage";
 
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <div>
-      <h1>Hello</h1>
-      <h2><b>Ashish</b></h2>
-    </div>
+    <HomePage />
   </React.StrictMode>
 );
 
