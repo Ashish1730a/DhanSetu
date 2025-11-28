@@ -141,7 +141,7 @@ function Footer() {
         <p>
           *Customers availing insurance advisory services offered by Ditto
           (Tacterial Consulting Private Limited | IRDAI Registered Corporate
-          Agent (Composite) License No CA0738) will not have access to the
+          Agent (Composite) License No CA0738) will  not have access to the
           exchange investor grievance redressal forum, SEBI SCORES/ODR, or
           arbitration mechanism for such products.
         </p>
