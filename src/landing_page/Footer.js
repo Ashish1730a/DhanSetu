@@ -102,7 +102,7 @@ function Footer() {
           Address, Mobile Number, E-mail ID. Benefits: Effective Communication,
           Speedy redressal of the grievances
         </p>
-        <a href="">Smart Online Dispute Resolution</a>|
+        <a href="">Smart Online Dispute Resolution</a> |
         <a href=""> Grievances Redressal Mechanism</a>
         <p>
           Investments in securities market are subject to market risks; read all
