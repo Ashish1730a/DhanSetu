@@ -1,8 +1,27 @@
 import React from 'react'
 
-function LeftImage() {
+function LeftImage({imageURL, productName, productDesctiption, tryDemo, learnMore, googlePlay, appStore}) {
     return ( 
-        <h1>LeftImage</h1>
+        <div className="container ">
+            <div className="row align-items-center">
+                <div className="col-6 mt-5">
+                    <img src={imageURL} className='img-fluid'/>
+                </div>
+                <div className="col-6 p-5">
+                    <h4>{productName}</h4>
+                    
+                    <p >{productDesctiption}</p>
+                    <div>
+                     <a href={tryDemo} style={{marginRight: "20px"}}>Try Demo <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+                    <a href={learnMore} >Learn More <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+                    </div>
+                   <div className='mt-3'>
+                    <a href={googlePlay} ><img src="media/googlePlayBadge.svg" /></a>
+                    <a href={appStore} className='ms-5'><img src="media/appstoreBadge.svg" /></a>
+                   </div>
+                </div>
+            </div>
+        </div>
      );
 }
 
