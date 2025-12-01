@@ -11,13 +11,13 @@ function LeftImage({imageURL, productName, productDesctiption, tryDemo, learnMor
                     <h4>{productName}</h4>
                     
                     <p >{productDesctiption}</p>
-                    <div>
-                     <a href={tryDemo} style={{marginRight: "20px"}}>Try Demo <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
-                    <a href={learnMore} >Learn More <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+                    <div >
+                     <a href={tryDemo} style={{textDecoration: "none"}}>Try Demo <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+                    <a href={learnMore} style={{marginLeft: "60px", textDecoration: "none"}}>Learn More <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
                     </div>
                    <div className='mt-3'>
                     <a href={googlePlay} ><img src="media/googlePlayBadge.svg" /></a>
-                    <a href={appStore} className='ms-5'><img src="media/appstoreBadge.svg" /></a>
+                    <a href={appStore} className='ms-3'><img src="media/appstoreBadge.svg" /></a>
                    </div>
                 </div>
             </div>
