@@ -16,3 +16,26 @@ code {
   font-weight: 500;
   margin-right: 30px;
 }
+
+#supportHero {
+  background-color: rgb(56, 126, 209);
+  color: white;
+}
+
+#supportWrapper {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 150px;
+}
+
+#supportHero a{
+  color: white;
+}
+
+#supportHero input {
+  padding: 13px 20px;
+  width: 88%;
+  font-size: 15px;
+  border-radius: 10px;
+  border: none;
+}
