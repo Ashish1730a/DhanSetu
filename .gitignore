@@ -10,6 +10,17 @@
 
 # production
 /build
+dist/
+.next/
+out/
+
+# Cache & Temporary Files
+# ========================
+.cache/
+.parcel-cache/
+coverage/
+.tmp/
+temp/
 
 # misc
 .DS_Store
