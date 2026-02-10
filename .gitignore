@@ -1,5 +1,7 @@
 # dependencies
 node_modules/
+dashboard/node_modules/
+
 .pnp
 .pnp.js
 
