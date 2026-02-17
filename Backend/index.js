@@ -4,18 +4,25 @@ const express = require('express');
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const cookieParser = require("cookie-parser");
 
 const { HoldingsModel } = require("./Models/HoldingsModel");
 const { PositionsModel } = require("./Models/PostionsModel");
 const OrderModel = require("./Models/OrdersModel")
+const authRoute = require("./Routes/AuthRoute");
 
 const PORT = process.env.PORT || 3002;
 const url = process.env.MONGO_URL;
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: "http://localhost:3000",
+  credentials: true
+}));
 app.use(bodyParser.json());
+app.use(cookieParser());
+app.use("/auth", authRoute);
 
 // app.get("/addHoldings", async(req,res) => {
 //     let tempHoldings = [
@@ -206,8 +213,11 @@ app.post("/newOrder", async (req, res) => {
   res.send("Order saved!");
 })
 
-app.listen(3002, () => {
-  console.log("App started!")
-  mongoose.connect(url)
-  console.log("MongoDB connected!")
+mongoose.connect(url).then(() => {
+  console.log("MongoDB connected successfully!");
+  app.listen(PORT, () => {
+    console.log(`App started on port ${PORT}!`);
+  });
+}).catch((error) => {
+  console.error("MongoDB connection error:", error);
 }); 
