@@ -8,7 +8,12 @@ import ProductPage from "./landing_page/products/ProductPage";
 import PricingPage from "./landing_page/pricing/PricingPage";
 import SupportPage from "./landing_page/support/SupportPage";
 import Signup from "./landing_page/signup/Signup";
+import Login from "./landing_page/signup/Login";
+
 import NotFound from "./landing_page/NotFound";
+
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import Navbar from "./landing_page/Navbar";
 import Footer from "./landing_page/Footer";
@@ -16,10 +21,12 @@ import Footer from "./landing_page/Footer";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
+   <ToastContainer position="top-right" autoClose={3000} />
   <Navbar />
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/signup" element={<Signup />} />
+      <Route path="/login" element={<Login />} />
       <Route path="/about" element={<AboutPage />} />
       <Route path="/product" element={<ProductPage />} />
       <Route path="/pricing" element={<PricingPage />} />
@@ -31,6 +38,4 @@ root.render(
   </BrowserRouter>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+

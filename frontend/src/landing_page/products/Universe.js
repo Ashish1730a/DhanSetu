@@ -1,6 +1,14 @@
 import React from "react";
+import {useState} from "react";
+import {Link} from 'react-router-dom';
 
 function Universe() {
+  const [hover, setHover] = useState(false);
+       const buttonStyle = {
+           transform: hover ? "scale(1.05)" : "scale(1)",
+          boxShadow: hover ? "0 5px 15px rgba(78, 115, 223, 0.4)" : "none",
+       }
+
   return (
     <div className="container p-5">
       <div className="row text-center align-items-center">
@@ -73,16 +81,9 @@ function Universe() {
             mis-selling.
           </p>
         </div>
-        <button
-          className="p-2 btn text-white fs-5 mb-3 mt-3"
-          style={{
-            width: "20%",
-            margin: " 0 auto",
-            backgroundColor: "#1976D2",
-          }}
-        >
-          Signup Now
-        </button>
+        <Link to="/signup">
+        <button className='p-2 btn text-white fs-5 mt-3' style={{ ...buttonStyle, width: "20%", margin: " 0 auto", background: "linear-gradient(135deg, #4e73df, #6f42c1)", transition: "0.3s" ,  borderRadius: "10px", padding:"12px", }} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>Sign up for free</button>
+        </Link>
       </div>
     </div>
   );
