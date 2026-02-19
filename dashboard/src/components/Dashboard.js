@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 
-import Apps from "./Apps";
+import DhanSetu from "./DhanSetu";
 import Funds from "./Funds";
 import Holdings from "./Holdings";
 
@@ -27,7 +27,7 @@ const Dashboard = () => {
             <Route path="/holdings" element={<Holdings />} />
             <Route path="/position" element={<Positions />} />
             <Route path="/funds" element={<Funds />} />
-            <Route path="/apps" element={<Apps />} />
+            <Route path="/dhansetu" element={<DhanSetu />} />
           </Routes>
         </div>
     </div>

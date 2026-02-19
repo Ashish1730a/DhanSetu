@@ -6,7 +6,7 @@ function Navbar() {
     <nav class="navbar navbar-expand-lg bg-white border-bottom bg-body-tertiary ">
       <div class="container">
         <Link class="navbar-brand" to="/">
-          <img src="media/myLogo.png" style={{ width: "22%" }}/>
+          <img src="media/myLogo.png" style={{ width: "22%" }} />
         </Link>
         <button
           class="navbar-toggler"
@@ -23,7 +23,7 @@ function Navbar() {
           <form action="">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <Link class="nav-link"  to="/signup">
+                <Link class="nav-link" to="/signup">
                   Signup
                 </Link>
               </li>
@@ -46,6 +46,16 @@ function Navbar() {
                 <Link class="nav-link" to="/support">
                   Support
                 </Link>
+              </li>
+              <li className="nav-item">
+                <a
+                  className="nav-link"
+                  href="http://localhost:3000"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Dashboard
+                </a>
               </li>
             </ul>
           </form>
