@@ -1,4 +1,5 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
+import { VerticalGraph } from "./VerticalGraph";
 
 import axios from 'axios';
 
@@ -13,7 +14,56 @@ const Holdings = () => {
       console.log(res.data);
       setAllHoldings(res.data);
     })
-}, [])
+  }, [])
+
+  // const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+  const labels = allHoldings.map((subArray) => subArray["name"]);
+
+ const data = {
+  labels,
+  datasets: [
+    {
+      label: 'Current Price',
+      data: allHoldings.map((stock) => stock.price),
+      backgroundColor: 'rgba(16, 185, 129, 0.7)',   // Emerald
+      borderColor: 'rgba(5, 150, 105, 1)',
+      borderWidth: 1,
+      borderRadius: 8,
+    },
+    {
+      label: 'Investment',
+      data: allHoldings.map((stock) => stock.avg),
+      backgroundColor: 'rgba(245, 158, 11, 0.7)',   // Gold
+      borderColor: 'rgba(217, 119, 6, 1)',
+      borderWidth: 1,
+      borderRadius: 8,
+    }
+  ]
+};
+
+  //     export const data = {
+  //       labels,
+  //       datasets: [
+  //         {
+  //           label: 'Revenue',
+  //           data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
+  //           backgroundColor: 'rgba(16, 185, 129, 0.7)',   // Emerald Green
+  //           borderColor: 'rgba(5, 150, 105, 1)',
+  //           borderWidth: 1,
+  //           borderRadius: 8,
+  //         },
+  //         {
+  //           label: 'Investments',
+  //           data: labels.map(() => faker.datatype.number({ min: 0, max: 1000 })),
+  //           backgroundColor: 'rgba(245, 158, 11, 0.7)',   // Gold
+  //           borderColor: 'rgba(217, 119, 6, 1)',
+  //           borderWidth: 1,
+  //           borderRadius: 8,
+  //         },
+  //       ],
+  //     };
+
+
 
   return (
     <>
@@ -74,6 +124,7 @@ const Holdings = () => {
           <p>P&L</p>
         </div>
       </div>
+      <VerticalGraph data={data} />
     </>
   );
 };

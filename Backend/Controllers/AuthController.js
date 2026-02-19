@@ -63,7 +63,6 @@ module.exports.Login = async (req, res, next) => {
 
     next();
   } catch (error) {
-    console.error("LOGIN ERROR:", error);
     console.error(error);
     res.status(500).json({
       message: "Login failed",

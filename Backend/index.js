@@ -196,6 +196,11 @@ app.get("/allHoldings", async (req, res) => {
   res.json(allHoldings);
 });
 
+app.get("/allOrders", async (req, res) => {
+  const allOrders = await OrderModel.find({});
+  res.json(allOrders);
+});
+
 app.get("/allPositions", async (req, res) => {
   let allPositions = await PositionsModel.find({})
   res.json(allPositions);
@@ -212,6 +217,7 @@ app.post("/newOrder", async (req, res) => {
 
   res.send("Order saved!");
 })
+
 
 mongoose.connect(url).then(() => {
   console.log("MongoDB connected successfully!");
