@@ -12,8 +12,9 @@ module.exports.Signup = async (req, res, next) => {
     const user = await User.create({ email, password, username, mobileNumber });
     const token = createSecretToken(user._id);
     res.cookie("token", token, {
-      withCredentials: true,
-      httpOnly: false,
+      httpOnly: true,
+      sameSite: "lax",
+      secure: process.env.NODE_ENV === "production",
     });
     res
       .status(201)
@@ -32,11 +33,11 @@ module.exports.Login = async (req, res, next) => {
     // 1️⃣ Check user exists
     const user = await User.findOne({ email });
     if (!user) {
-  return res.status(400).json({
-    message: "User not found",
-    success: false,
-  });
-}
+      return res.status(400).json({
+        message: "User not found",
+        success: false,
+      });
+    }
     // 2️⃣ Compare password
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) {
@@ -50,8 +51,9 @@ module.exports.Login = async (req, res, next) => {
     const token = createSecretToken(user._id);
 
     res.cookie("token", token, {
-      withCredentials: true,
-      httpOnly: false,
+      httpOnly: true,
+      sameSite: "lax",
+      secure: process.env.NODE_ENV === "production",
     });
 
     const { password: pass, ...others } = user._doc;

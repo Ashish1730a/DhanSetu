@@ -18,6 +18,7 @@ const app = express();
 
 app.use(cors({
   origin: [
+    "http://localhost:3001",
     "https://frontend-dhanSetu.onrender.com",   // frontend URL
     "https://dashboard-dhanSetu.onrender.com"   //dashboard URL
   ],
