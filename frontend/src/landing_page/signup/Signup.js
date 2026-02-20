@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "./signup.css";
 import { toast } from "react-toastify";
+const API_URL = process.env.REACT_APP_API_URL;
 
 function Signup() {
   const [user, setUser] = useState({
@@ -26,7 +27,7 @@ function Signup() {
 
     try {
       const res = await axios.post(
-        "http://localhost:3002/auth/signup",
+        `${API_URL}/auth/signup`,
         user,
         { withCredentials: true }
       );
