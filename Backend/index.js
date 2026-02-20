@@ -17,7 +17,10 @@ const url = process.env.MONGO_URL;
 const app = express();
 
 app.use(cors({
-  origin: ["http://localhost:3000", "http://localhost:3001"],
+  origin: [
+    "https://frontend-dhanSetu.onrender.com",   // frontend URL
+    "https://dashboard-dhanSetu.onrender.com"   //dashboard URL
+  ],
   credentials: true
 }));
 app.use(bodyParser.json());
